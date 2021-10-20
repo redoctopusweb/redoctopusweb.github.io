@@ -36,7 +36,7 @@ while((remainingLetters > 0) && (guessesNr > 0)) {
 	// Show the player their progress
 	alert("這個字有 " + word.length + " 個單字 " + answerArray.join(" "));
 	// Take input from player
-	var guess = prompt("猜一個字母");
+	var guess = prompt("猜一個字母，或按 Cancel 按鈕退出");
 
 	// if the player clicks the Cancel button, then guess will be null
 	if(guess===null) {
