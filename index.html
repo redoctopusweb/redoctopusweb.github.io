@@ -8,10 +8,62 @@
     <h1>Hello world!</h1>
     <p>My <em>first</em> <strong>Web Page</strong>.</p>
     <p><a href="https://translate.google.com.tw/?hl=zh-TW" title="translate!!!Oh Ya!!!">Click Here</a> to translate <strong>some words</strong>.</p>
-    <script>
+<script>
+var words = [
+	"javascript",
+	"monkey",
+	"amazing",
+	"pancake"
+	];
 
-        var  words  =  [ "javascript", "monkey", "amazing", "pancake"     ]; // Pick a random word var  word  =  words[Math.floor(Math.random()  *  words.length)]; // Set up the answer array var  answerArray  =  []; for  (var  i  =  0; i  <  word.length; i++) {       answerArray[i]  =  "_";     } var  remainingLetters  =  word.length; // The game loop while  (remainingLetters  >  0) { // Show the player their progress alert(answerArray.join(" ")); // Get a guess from the player var  guess  =  prompt("Guess a letter, or click Cancel to stop   playing."); if  (guess  ===  null) { // Exit the game loop break;       } else  if  (guess.length  !==  1) { alert("Please enter a single letter.");       }       } else  { // Update the game state with the guess for  (var  j  =  0; j  <  word.length; j++) { if  (word[j]  ===  guess) {             answerArray[j]  =  guess;             remainingLetters--;           }         } // The end of the game loop     } // Show the answer and congratulate the player alert(answerArray.join(" ")); alert("Good job! The answer was "  +  word);
-      
-    </script>    
+var word = words[Math.floor(Math.random() * words.length)];
+
+//create an empty array called answerArray and fill it 
+//with underscores (_) to match the number
+//of letters in the word
+var answerArray = [];
+
+for( var i=0; i < word.length; i++) {
+	answerArray[i] = "_";
+}
+
+//every time the player guesses a
+//correct letter, this value will 
+//be decremented (reduced) by 1
+var remainingLetters = word.length;
+var guessesNr = 4;
+while((remainingLetters > 0) && (guessesNr > 0)) {
+	// Show the player their progress
+	alert("The word is from " + word.length + " letters " + answerArray.join(" "));
+	// Take input from player
+	var guess = prompt("Guess a letter");
+
+	// if the player clicks the Cancel button, then guess will be null
+	if(guess===null) {
+		// break to exit the loop
+		break;
+		//ensuring that guess is exactly one letter
+	} else if(guess.length !== 1) {
+		alert("Please enter a single letter!");
+	} else {
+		for(var j = 0; j < word.length; j++) {
+			if(word[j] === guess) {
+				// sets the element at index j, from word, 
+				// of answerArray to guess
+                answerArray[j] = guess;
+				remainingLetters--;
+			
+			} else {	
+				//guessesNr--;
+				//console.log("guessesNr", guessesNr);
+			}
+		}
+	}
+	
+}
+
+//alert(answerArray.join(" "));
+alert("Great job! The answer was " + word);
+</script> 
 </body>
-</html>  
+</html> 
