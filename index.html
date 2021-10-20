@@ -34,9 +34,9 @@ var remainingLetters = word.length;
 var guessesNr = 4;
 while((remainingLetters > 0) && (guessesNr > 0)) {
 	// Show the player their progress
-	alert("The word is from " + word.length + " letters " + answerArray.join(" "));
+	alert("這個字有 " + word.length + " 個單字 " + answerArray.join(" "));
 	// Take input from player
-	var guess = prompt("Guess a letter");
+	var guess = prompt("猜一個字母");
 
 	// if the player clicks the Cancel button, then guess will be null
 	if(guess===null) {
@@ -44,7 +44,7 @@ while((remainingLetters > 0) && (guessesNr > 0)) {
 		break;
 		//ensuring that guess is exactly one letter
 	} else if(guess.length !== 1) {
-		alert("Please enter a single letter!");
+		alert("請輸入一個字母!!!");
 	} else {
 		for(var j = 0; j < word.length; j++) {
 			if(word[j] === guess) {
@@ -63,7 +63,7 @@ while((remainingLetters > 0) && (guessesNr > 0)) {
 }
 
 //alert(answerArray.join(" "));
-alert("Great job! The answer was " + word);
+alert("答對了!!! 答案是 " + word);
 </script> 
 </body>
 </html> 
