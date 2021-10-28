@@ -1,68 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>找到寶藏!</title>
-</head>
-  
-<body>
-    <h1 id="heading">找到寶藏!</h1> 
-<img id="map" width="400" height="400" src= "https://upload.cc/i1/2021/10/22/QjS31k.jpg" />
 
-<p id="result"></p> 
+<!-- saved from url=(0094)http://www.clps.tp.edu.tw/vschool/ClassIndex.asp?GradeName=%A4%BB&ClassName=4&Account=phzhuang -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=Big5">
+		<title>福某的網頁</title>
+		
+		</head>
 
-<script>
-// Get a random number from 0 to size var 
-getRandomNumber = function (size) { 
-  return Math.floor ( Math.random () * size); 
-}; 
-// Calculate distance between click event and target a
-var getDistance = function (event, target) { 
-  var diffX = event .offsetX - target. x ; 
-  var diffY = event .offsetY - target. y ; 
-  return Math.sqrt ((diffX * diffX) + (diffY * diffY)); 
-}; 
-// Get a string representing the distance 
-var getDistanceHint = function (distance) { 
-if (distance < 10) { 
-  return "就差一點點了!!!" ; 
-} else if (distance < 20) {
-  return "超近";
-} else if (distance < 40) { 
-  return "很近" ; 
-} else if (distance < 80) { 
-  return "近" ; 
-} else if (distance < 160) { 
-  return "遠" ; 
-} else if (distance < 320) { 
-  return "很遠!" ; 
-} else { 
-  return "超遠!!!" ; } 
-}; 
-// Set up our variables ➊ 
-var width = 400; 
-var height = 400; 
-var clicks = 0; 
-// Create a random target location ➋ 
-var target = { 
-  x: getRandomNumber(width), y: getRandomNumber(height) 
-}; 
-// Add a click handler to the img element ➌ 
-map = document.getElementById('map');
-result = document.getElementById('result');
-map.addEventListener('click', function(event) {
-  clicks++; 
-  // Get distance between click event and target ➍ 
-  var distance = getDistance(event, target); 
-  // Convert distance to a hint ➎ 
-  var distanceHint = getDistanceHint(distance); 
-  // Update the #distance element with the new hint ➏ 
-  
-  result.innerHTML = distanceHint;
-  // If the click was close enough, tell them they won ➐ 
-  if (distance < 8) { 
-    alert ( "你用了 " + clicks + " 次找到寶藏" ); 
-  } 
-});
-</script> 
-</body>
-</html> 
+		<frameset rows="90,*" frameborder="NO" border="0" framespacing="0"> 
+		  <frame name="topFrame" scrolling="NO" noresize="" src="./我的網頁_files/classTitle.html">
+		  <frame name="mainFrame" src="./我的網頁_files/classContentFrame1.html">
+		</frameset>
+		<noframes><body bgcolor="#FFFFFF" text="#000000">
+
+		</body></noframes>
+		
+</html>
